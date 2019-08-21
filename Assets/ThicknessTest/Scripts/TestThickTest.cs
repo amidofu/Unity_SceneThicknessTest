@@ -12,7 +12,7 @@ public class TestThickTest : MonoBehaviour {
     public RenderTexture passCullBackTex;
     private void Awake()
     {
-        material = new Material(Shader.Find("Hidden/TestThickShader"));
+        material = new Material(Shader.Find("Hidden/CalcThicknessShader"));
         m_Camera = GetComponent<Camera>();
         m_Camera.CopyFrom(Camera.main);
         m_Camera.depthTextureMode = m_Camera.depthTextureMode | DepthTextureMode.Depth;

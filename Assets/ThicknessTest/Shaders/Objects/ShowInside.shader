@@ -26,8 +26,7 @@
 
 
 
-
-		Tags{"RenderType" = "Opaque" "MyTag"="Thickness"}
+		Tags{"RenderType" = "Opaque" "MyTag" = "Thickness"}
 		Pass
 		{
 			Cull Back ZWrite On ZTest LEqual

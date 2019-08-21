@@ -53,8 +53,8 @@
 				////return col;
 				//return float4(depth01, depth01, depth01, 1);
 
-				float thickness = tex2D(_ThicknessTex, i.uv).r;
-				float thickAlpha = thickness * _ProjectionParams.w * 20;
+				float thickness = DecodeFloatRGBA (tex2D(_ThicknessTex, i.uv));
+				float thickAlpha = thickness * _ProjectionParams.z;
 				float4 col = tex2D(_MainTex, i.uv);
 				float4 fog = float4(1, 0, 1, 1);
 				col = fog * thickAlpha + col * 1 * (1 - thickAlpha);

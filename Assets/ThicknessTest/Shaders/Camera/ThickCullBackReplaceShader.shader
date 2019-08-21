@@ -7,7 +7,8 @@
 	}
 	SubShader 
 	{
-		Tags{"RenderType" = "Opaque" "MyTag" = "Thickness"}
+			//Tags{"RenderType" = "Opaque" "MyTag" = "Thickness"}
+			Tags{"Queue" = "Geometry" "MyTag" = "Thickness"}
 		Pass
 		{
 			Tags{ "LightMode" = "ShadowCaster"}

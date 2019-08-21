@@ -25,6 +25,7 @@ public class RenderThicknessToTexture : MonoBehaviour {
         thicknessCamera.SetReplacementShader(cullBackReplace, "MyTag");
         testThick.pass = 1;
         thicknessCamera.Render();
+        thicknessCamera.ResetReplacementShader();
     }
 
     private void OnDisable()
