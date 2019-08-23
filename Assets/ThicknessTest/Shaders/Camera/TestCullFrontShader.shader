@@ -54,6 +54,7 @@
 				//return float4(depth01, depth01, depth01, 1);
 
 				float thickness = DecodeFloatRGBA (tex2D(_ThicknessTex, i.uv));
+			//return thickness;
 				float thickAlpha = thickness * _ProjectionParams.z;
 				float4 col = tex2D(_MainTex, i.uv);
 				float4 fog = float4(1, 0, 1, 1);
