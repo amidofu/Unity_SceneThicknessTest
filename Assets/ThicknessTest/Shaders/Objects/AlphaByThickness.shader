@@ -52,19 +52,10 @@
 			
 			float4 frag (v2f i) : SV_Target
 			{
-				//i.screenPos = ComputeScreenPos(i.vertex);
 				float2 screenUV = i.screenPos.xy / i.screenPos.w;
-				//screenUV = screenUV * 0.5 + 0.5;
-				// sample the texture
-				//float thickness = DecodeFloatRGBA(tex2D(_ThicknessTex, screenUV)) * _ProjectionParams.z * _ThicknessMultiplier;
-				float thickness = DecodeFloatRGBA(tex2D(_ThicknessTex, screenUV));// *_ThicknessMultiplier;
+				float thickness = DecodeFloatRGBA(tex2D(_ThicknessTex, screenUV));
 				float4 col = fixed4(_Color.rgb, thickness);
-				//return thickness * 10;
-				//float4 col = tex2D(_ThicknessTex, screenUV);
-				// apply fog
 				col.a = thickness * _ProjectionParams.z * _ThicknessMultiplier;
-				//col = Linear01Depth(UNITY_SAMPLE_DEPTH(tex2D(_CameraDepthTexture, screenUV)));
-				//col.a = 1;
 				return col;
 			}
 			ENDCG

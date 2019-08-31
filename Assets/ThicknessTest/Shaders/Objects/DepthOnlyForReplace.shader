@@ -1,4 +1,5 @@
-﻿Shader "Show Insides" {
+﻿//https://forum.unity.com/threads/depth-only-shader.590620/
+Shader "DepthOnlyForReplace" {
 	SubShader{
 		//Pass 
 		//{
@@ -42,8 +43,8 @@
 
 		////}
 
-
-		Tags {"Queue" = "AlphaTest" "IgnoreProjector" = "True" "RenderType" = "TransparentCutout" "MyTag" = "Thickness"}
+		
+		Tags {"Queue" = "AlphaTest" "IgnoreProjector" = "True" "RenderType" = "TransparentCutout" "DepthTag" = "Thickness"}
 
 		Pass {
 			Tags { "LightMode" = "ShadowCaster" }
